@@ -7,5 +7,5 @@ ASP.NET Core Web API using Entity Framework Core, JWT and MS SQL Server
 ### Entity Framework Core Model
 ![Image](https://github.com/xerun/Angular9-ASP.NET-Core-Web-API-Entity-Framework-Core-JWT/blob/master/images/EmployeeModel.JPG)
 
-### Unit Testing with Entity Framework InMemory, Mock
+### Unit Testing with Entity Framework InMemory, Moq
 ![Image](https://github.com/xerun/Angular9-ASP.NET-Core-Web-API-Entity-Framework-Core-JWT/blob/master/images/unitTest.JPG)
