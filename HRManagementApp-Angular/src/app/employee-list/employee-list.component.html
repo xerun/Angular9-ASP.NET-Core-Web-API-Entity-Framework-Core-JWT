@@ -1,0 +1,29 @@
+<div class="col-sm-11 mx-auto">
+    <h3 class="m-t-20 m-b-20">Employee List</h3>
+    <table class="table table-hover dataTable">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Manager</th>
+                <th scope="col">Department</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let e of service.list'>					
+                <td scope="col" (click)='fillForm(e)'>{{e.EmployeeId}}</td>
+                <td scope="col" (click)='fillForm(e)'>{{e.FirstName}} {{e.LastName}}</td>
+                <td scope="col" (click)='fillForm(e)'>{{e.Email}}</td>
+                <td scope="col" (click)='fillForm(e)'>{{e.PhoneNumber}}</td>
+                <td scope="col" (click)='fillForm(e)'>{{e.ManagerId}}</td>
+                <td scope="col" (click)='fillForm(e)'>{{e.DepartmentId}}</td>
+                <td scope="col">
+                    <button (click)="onDelete(e.EmployeeId)" class="btn btn-danger">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

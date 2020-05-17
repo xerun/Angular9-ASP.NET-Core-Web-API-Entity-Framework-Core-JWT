@@ -1,0 +1,95 @@
+<div class="col-sm-12 " style="min-height:600px;">
+    <div class="col-sm-11 mx-auto">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="col-sm-11 mx-auto">
+                    <h3 class="m-t-20 m-b-20">Employee</h3>
+                    <span></span>
+                    <form #form="ngForm" (submit)="onSubmit(form)" autocomplete="off">
+                        <input type="hidden" name="EmployeeId" [value]="service.formData.EmployeeId">
+                        <div class="form-group p-t-10">
+                            <div class="wrap-input100 validate-input" data-validate = "Enter First Name">
+                                <input class="input100 has-val" type="text" id="FirstName" #FirstName="ngModel" 
+                                    [(ngModel)]="service.formData.FirstName" name="FirstName" minlength="3" required>
+                                <span class="focus-input100" data-placeholder="First Name"></span>
+                            </div>
+                        </div>
+                        <div class="form-group p-t-10">
+                            <div class="wrap-input100 validate-input" data-validate = "Enter Last Name">
+                                <input class="input100 has-val" type="text" id="LastName" #LastName="ngModel" 
+                                    [(ngModel)]="service.formData.LastName" name="LastName" minlength="3" required>
+                                <span class="focus-input100" data-placeholder="Last Name"></span>
+                            </div>
+                        </div>
+                        <div class="form-group p-t-10">
+                            <div class="wrap-input100 validate-input" data-validate = "Enter Email">
+                                <input class="input100 has-val" type="email" id="Email" #Email="ngModel" 
+                                    [(ngModel)]="service.formData.Email" name="Email" >
+                                <span class="focus-input100" data-placeholder="Email"></span>
+                            </div>
+                        </div>
+                        <div class="form-group p-t-10">
+                            <div class="wrap-input100 validate-input" data-validate = "Enter Phone Number">
+                                <input class="input100 has-val" type="text" id="PhoneNumber" #PhoneNumber="ngModel" 
+                                    [(ngModel)]="service.formData.PhoneNumber" name="PhoneNumber" >
+                                <span class="focus-input100" data-placeholder="Phone Number"></span>
+                            </div>
+                        </div>
+                        <div class="form-group p-t-10">
+                            <div class="wrap-input100 validate-input" data-validate = "Enter Hire Date">
+                                <input class="input100 has-val" type="text" id="HireDate" #HireDate="ngModel" 
+                                    [(ngModel)]="service.formData.HireDate" name="HireDate" >
+                                <span class="focus-input100" data-placeholder="Hire Date"></span>
+                            </div>
+                        </div>
+                        <div class="form-group p-t-10">
+                            <div class="wrap-input100 validate-input" data-validate = "Enter Salary">
+                                <input class="input100 has-val" type="text" id="Salary" #Salary="ngModel" 
+                                    [(ngModel)]="service.formData.Salary" name="Salary" >
+                                <span class="focus-input100" data-placeholder="Salary"></span>
+                            </div>
+                        </div>
+                        <div class="form-group p-t-10">
+                            <div class="wrap-input100 validate-input" data-validate = "Enter Commission %">
+                                <input class="input100 has-val" type="text" id="CommissionPCT" #CommissionPCT="ngModel" 
+                                    [(ngModel)]="service.formData.CommissionPCT" name="CommissionPCT" >
+                                <span class="focus-input100" data-placeholder="Commission %"></span>
+                            </div>
+                        </div>
+                        <div class="form-group p-t-10">
+                            <div class="wrap-input100 validate-input" data-validate = "Enter Job">
+                                <select class="input100 has-val" style="border:0px" id="JobId" #JobId="ngModel" 
+                                    [(ngModel)]="service.formData.JobId" name="JobId" required>
+                                    <option *ngFor='let j of this.jobsList' [ngValue]="j.JobId">{{j.JobTitle}}</option>
+                                </select>
+                                <span class="focus-input100" data-placeholder="Job"></span>
+                            </div>
+                        </div>
+                        <div class="form-group p-t-10">
+                            <div class="wrap-input100 validate-input" data-validate = "Enter Manager">
+                                <select class="input100 has-val" style="border:0px" id="ManagerId" #ManagerId="ngModel" 
+                                    [(ngModel)]="service.formData.ManagerId" name="ManagerId">
+                                    <option *ngFor='let e of this.mrgList' [ngValue]="e.EmployeeId">{{e.FirstName}} {{e.LastName}}</option>
+                                </select>
+                                <span class="focus-input100" data-placeholder="Manager"></span>
+                            </div>
+                        </div>
+                        <div class="form-group p-t-10">
+                            <div class="wrap-input100 validate-input" data-validate = "Enter Department">
+                                <select class="input100 has-val" style="border:0px" id="DepartmentId" #DepartmentId="ngModel" 
+                                    [(ngModel)]="service.formData.DepartmentId" name="DepartmentId">
+                                    <option *ngFor='let d of this.dptList' [ngValue]="d.DepartmentId">{{d.DepartmentName}}</option>
+                                </select>
+                                <span class="focus-input100" data-placeholder="Department"></span>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Save</button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <app-employee-list></app-employee-list> 
+            </div>
+        </div>
+    </div>
+</div>

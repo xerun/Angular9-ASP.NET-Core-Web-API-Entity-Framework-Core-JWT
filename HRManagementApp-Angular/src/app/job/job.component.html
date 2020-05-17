@@ -1,0 +1,40 @@
+<div class="col-sm-12 " style="min-height:600px;">
+    <div class="col-sm-11 mx-auto">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="col-sm-11 mx-auto">
+                    <h3 class="m-t-20 m-b-20">Job</h3>
+                    <span></span>
+                    <form #form="ngForm" (submit)="onSubmit(form)" autocomplete="off">
+                        <input type="hidden" name="JobId" [value]="service.formData.JobId">
+                        <div class="form-group p-t-10">
+                            <div class="wrap-input100 validate-input" data-validate = "Enter Job Title">
+                                <input class="input100 has-val" type="text" id="JobTitle" #JobName="ngModel" 
+                                    [(ngModel)]="service.formData.JobTitle" name="JobTitle" minlength="3" required>
+                                <span class="focus-input100" data-placeholder="Job Title"></span>
+                            </div>
+                        </div>
+                        <div class="form-group p-t-10">
+                            <div class="wrap-input100 validate-input" data-validate = "Min Salary">
+                                <input class="input100 has-val" type="text" id="MinSalary" #JobName="ngModel" 
+                                    [(ngModel)]="service.formData.MinSalary" name="MinSalary" minlength="3" required>
+                                <span class="focus-input100" data-placeholder="Min Salary"></span>
+                            </div>
+                        </div>
+                        <div class="form-group p-t-10">
+                            <div class="wrap-input100 validate-input" data-validate = "Max Salary">
+                                <input class="input100 has-val" type="text" id="MaxSalary" #JobName="ngModel" 
+                                    [(ngModel)]="service.formData.MaxSalary" name="MaxSalary" minlength="3" required>
+                                <span class="focus-input100" data-placeholder="Max Salary"></span>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Save</button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <app-job-list></app-job-list> 
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="col-sm-11 mx-auto">
+    <h3 class="m-t-20 m-b-20">Department</h3>
+    <span></span>
+    <form #form="ngForm" (submit)="onSubmit(form)" autocomplete="off">
+        <input type="hidden" name="DepartmentId" [value]="service.formData.DepartmentId">
+        <div class="form-group p-t-10">
+            <div class="wrap-input100 validate-input" data-validate = "Enter Department Name">
+                <input class="input100 has-val" type="text" id="DepartmentName" #DepartmentName="ngModel" 
+                    [(ngModel)]="service.formData.DepartmentName" name="DepartmentName" minlength="3" required>
+                <span class="focus-input100" data-placeholder="Department Name"></span>
+            </div>
+        </div>
+        <div class="form-group p-t-10">
+            <div class="wrap-input100 validate-input" data-validate = "Enter Manager">
+                <select class="input100 has-val" style="border:0px" id="ManagerId" #ManagerId="ngModel" 
+                    [(ngModel)]="service.formData.ManagerId" name="ManagerId" required>
+                    <option *ngFor='let e of this.empList' [ngValue]="e.EmployeeId">{{e.FirstName}} {{e.LastName}}</option>
+                </select>
+                <span class="focus-input100" data-placeholder="Manager"></span>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Save</button>
+    </form>
+</div>

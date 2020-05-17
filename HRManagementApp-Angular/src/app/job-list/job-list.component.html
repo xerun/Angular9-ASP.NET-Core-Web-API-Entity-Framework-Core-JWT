@@ -1,0 +1,23 @@
+<div class="col-sm-11 mx-auto">
+    <h3 class="m-t-20 m-b-20">Job List</h3>
+    <table class="table table-hover dataTable">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Title</th>
+                <th scope="col">Salary Range</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let j of service.list'>					
+                <td scope="col" (click)='fillForm(j)'>{{j.JobId}}</td>
+                <td scope="col" (click)='fillForm(j)'>{{j.JobTitle}}</td>
+                <td scope="col" (click)='fillForm(j)'>{{j.MinSalary}}-{{j.MaxSalary}}</td>
+                <td scope="col">
+                    <button (click)="onDelete(j.JobId)" class="btn btn-danger">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

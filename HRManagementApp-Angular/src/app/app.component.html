@@ -1,0 +1,34 @@
+<div class="col-sm-12" *ngIf="currentUser">
+    <div class="pull-right col-sm-12 text-right m-b-20">
+        <ul class="list-inline">
+            <li class="list-inline-item">Welcome: </li>
+            <li class="list-inline-item">| <a href="javascript:void(0)" (click)="logout()">Logout <i class="zmdi zmdi-close"></i></a></li>
+        </ul>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/"><i class="zmdi zmdi-account-box"></i></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item" routerLinkActive="active"><a class="nav-link" [routerLink]="['/']">Departments</a></li>
+                <li class="nav-item" routerLinkActive="active"><a class="nav-link" [routerLink]="['employee']">Employees</a></li>                
+                <li class="nav-item" routerLinkActive="active"><a class="nav-link" [routerLink]="['job']">Jobs</a></li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0" [formGroup]="searchMenu" >
+                <input class="form-control mr-sm-2" type="search" formControlName="search"
+                    placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+</div>
+<router-outlet></router-outlet>
+<footer class="page-footer font-small" *ngIf="currentUser">		
+    <div class="footer-copyright text-center py-3 mx-4 mt-3 btn-secondary" style="color:#fff">Angular 9 Project</div>
+</footer>
